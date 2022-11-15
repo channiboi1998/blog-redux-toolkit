@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Box, Card, CardActions, CardContent, Button, Typography, Container } from "@mui/material";
 import { useSelector } from "react-redux";
 import { getUserNameById } from "../users/UsersSlice";
@@ -13,7 +14,7 @@ const PostListEntry = ({ post }) => {
                         {post.title}
                     </Typography>
                     <Typography className="author-date" variant="body2" color="text.secondary">
-                        {useSelector(getUserNameById(post.user_id))}. March 20, 2022.
+                        {useSelector(getUserNameById(post.user_id))}
                     </Typography>
                 </Box>
                 <Box className="post-details">
@@ -25,8 +26,9 @@ const PostListEntry = ({ post }) => {
                 </Box>
             </CardContent>
             <CardActions className="actions">
-                <Button size="small">Share</Button>
-                <Button size="small">Read More</Button>
+                <Link to={"post/"+post.id}>
+                    <Button size="small">Read More</Button>
+                </Link>
             </CardActions>
         </Card>
     )

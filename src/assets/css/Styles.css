@@ -50,11 +50,24 @@
 .container.postslist .post-entry .content .title-holder .author-date {
     color: #fff;
     z-index: 2;
+    width: 100%;
 }
 
 .container.postslist .post-entry .actions {
     position: absolute;
     bottom: 10px;
+}
+
+.container.postslist .post-entry .actions a {
+    text-decoration: none;
+}
+
+.container.post-form .field {
+    margin-bottom: 40px;
+}
+
+.container.post-form .field textarea {
+    min-height: 100px;
 }
 
 @media screen and (max-width: 992px) {
